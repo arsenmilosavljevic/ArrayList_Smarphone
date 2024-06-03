@@ -18,20 +18,37 @@ public class MagazzinoSmartphone {
     }
 
     public void addSmartphone(Smartphone smartphone) {
-        smartphones.add(smartphone);
-        count++;
+        int i=0;
+        boolean trovato=false;
+        while(i<smartphones.size() && !trovato){
+            if(smartphones.get(i).equals(smartphone)){
+                trovato=true;
+
+            }
+            i++;
+        }
+        if(trovato==false){
+            smartphones.add(smartphone);
+            count++;
+        }
 
     }
 
-    public void removeSmartphone(Smartphone smartphone) {
+    /*public void removeSmartphone(Smartphone smartphone) {
         int i = 0;
         boolean trovato = false;
         while (i < getCount() && !trovato) {
             if (smartphones.get(i).equals(smartphone)) {
                 smartphones.remove(i);
                 trovato = true;
+                count--;
             }
             i++;
+        }
+    }*/
+    public void removeSmartphone(Smartphone smartphone){
+        if(smartphone!=null){
+        smartphones.remove(smartphone);
         }
     }
 
